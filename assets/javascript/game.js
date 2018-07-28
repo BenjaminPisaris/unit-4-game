@@ -34,35 +34,36 @@ function init() {
 
 //Listening
 //had to change it to double click to init
-document.ondblclick = function () {
+$(document).click(function() {
     if (isGameRunning === false) {
         init();
     }
+});
 
 
-}
+
+
 //these dont work on their own
-$("#crystal1").click(function () {
-    
+$("#red").click(function() {
     console.log(crystal1);
     var newScore = crystal1 + score;
     score = newScore;
     console.log(score);
     winHandler();
     newScore = 0;
-    
+
 });
-$("#crystal2").click(function () {
+$("#green").click(function() {
     if (isGameRunning == true) {
-    console.log(crystal2);
-    var newScore = crystal2 + score;
-    score = newScore;
-    console.log(score);
-    winHandler();
-    newScore = 0;
+        console.log(crystal2);
+        var newScore = crystal2 + score;
+        score = newScore;
+        console.log(score);
+        winHandler();
+        newScore = 0;
     }
 });
-$("#crystal3").click(function () {
+$("#blue").click(function() {
     console.log(crystal3);
     var newScore = crystal3 + score;
     score = newScore;
@@ -70,7 +71,7 @@ $("#crystal3").click(function () {
     winHandler();
     newScore = 0;
 });
-$("#crystal4").click(function () {
+$("#yellow").on("click", function() {
     console.log(crystal4);
     var newScore = crystal4 + score;
     score = newScore;
@@ -79,23 +80,23 @@ $("#crystal4").click(function () {
     newScore = 0;
 });
 
-    //have a function to add the crystal value to the score
-    //inside the function, call the winHandler
+//have a function to add the crystal value to the score
+//inside the function, call the winHandler
 
 
 
 
 
-    //end the game if the score hits the randomtarget or passes it
-    function winHandler() {
-        if (score === RandomTarget) {
-            wins++;
-            alert("Congrats! You won!");
-            isGameRunning = false;
-        }
-        else if (score > RandomTarget) {
-            losses++;
-            alert("Sorry, you lost :(")
-            isGameRunning = false;
-        }
-    };
+//end the game if the score hits the randomtarget or passes it
+function winHandler() {
+    if (score === RandomTarget) {
+        wins++;
+        alert("Congrats! You won!");
+        isGameRunning = false;
+    }
+    else if (score > RandomTarget) {
+        losses++;
+        alert("Sorry, you lost :(")
+        isGameRunning = false;
+    }
+};
