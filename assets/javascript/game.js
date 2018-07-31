@@ -1,5 +1,6 @@
 //Define a variable for your target score
-var RandomTarget = Math.floor(Math.random() * 5000);
+var RandomTarget;
+
 
 //generate values for the crystals
 var crystal1 = Math.floor(Math.random() * 1000);
@@ -19,30 +20,36 @@ var isGameRunning = false;
 
 
 function winHandler() {
+    console.log("winHandler")
     if (score == RandomTarget) {
         wins++;
         alert("Congrats! You won!");
         isGameRunning = false;
+        $("#wins").text(wins);
     }
     else if (score > RandomTarget) {
         losses++;
         alert("Sorry, you lost :(")
         isGameRunning = false;
+        $("#losses").text(losses);
     }
 };
 
 //INITIALIZE
 function init() {
+    $("#run").text("");
     isGameRunning = true;
     //Define a variable for your target score
-    var RandomTarget = Math.floor(Math.random * 500);
+    RandomTarget = Math.floor(Math.random() * 5000);
+    console.log("init" + RandomTarget);
+    $("#randomTarget").text(RandomTarget);
     //generate values for the crystals
     var crystal1 = Math.floor(Math.random() * 500);
     var crystal2 = Math.floor(Math.random() * 300);
     var crystal3 = Math.floor(Math.random() * 300);
     var crystal4 = Math.floor(Math.random() * 300);
     //define a variable for your score
-    var score = 0;
+    score = 0;
     $("#red").click(function () {
         //log the value of the crystal
         console.log(crystal1);
@@ -52,6 +59,7 @@ function init() {
         console.log(score);
         winHandler();
         newScore = 0;
+        $("#score").text(score);
     
     });
     $("#green").click(function () {
@@ -62,6 +70,7 @@ function init() {
             console.log(score);
             winHandler();
             newScore = 0;
+            $("#score").text(score);
         }
     });
     $("#blue").click(function () {
@@ -71,6 +80,7 @@ function init() {
         console.log(score);
         winHandler();
         newScore = 0;
+        $("#score").text(score);
     });
     $("#yellow").on("click", function () {
         console.log(crystal4);
@@ -79,6 +89,7 @@ function init() {
         console.log(score);
         winHandler();
         newScore = 0;
+        $("#score").text(score);
     });
 
 }
