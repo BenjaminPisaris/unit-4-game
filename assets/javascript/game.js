@@ -19,7 +19,7 @@ var isGameRunning = false;
 
 
 function winHandler() {
-    if (score === RandomTarget) {
+    if (score == RandomTarget) {
         wins++;
         alert("Congrats! You won!");
         isGameRunning = false;

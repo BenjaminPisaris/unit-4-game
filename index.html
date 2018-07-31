@@ -10,15 +10,25 @@
 </head>
 
 <body>
-
-    <h1>Crystal Geiser!</h1>
-    <p>This is a game.
-        <br>Click anywhere to start!
-
-        <div id="red">Crystal 1</div>
-        <div id="green">Crystal 2</div>
-        <div id="blue">Crystal 3</div>
-        <div id="yellow">Crystal 4</div>
+    <div class="container">
+        <div class="jumbotron bg-info text-center text-white">
+            <h1 class="display-1">Crystal Geiser!</h1>
+            <br>Click once to run the game.
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card" id="red">Crystal 1</div>
+            </div>
+            <div class="col">
+                <div class="card" id="green">Crystal 2</div>
+            </div>
+            <div class="col">
+                <div class="card" id="blue">Crystal 3</div>
+            </div>
+            <div class="col">
+                <div class="card" id="yellow">Crystal 4</div>
+            </div>
+        </div>
         <br>
         <br> Your score:
         <div id="score"></div>
@@ -26,7 +36,8 @@
         <div id="losses"></div>
         Limit:
         <div id="randomTarget"></div>
-
+        </p>
+    </div>
 </body>
 
 </html>
